@@ -1,0 +1,36 @@
+{
+  "name": "gulp starter-kit",
+  "version": "1.0.0",
+  "description": "Gulp theme starterkit",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bourbon": "^5.0.0",
+    "bourbon-neat": "^1.9.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^4.0.2",
+    "gulp-modernizr": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass-lint": "^1.3.4",
+    "support-for": "^1.0.7"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Gene Chechel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EugeneChechel/gulp-starterkit/issues"
+  },
+  "homepage": "https://github.com/EugeneChechel/gulp-starterkit/issues#readme"
+}
+

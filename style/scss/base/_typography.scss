@@ -1,0 +1,76 @@
+body {
+  font-family: $font-arial;
+  color: $color-black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-arial;
+}
+
+h1 {
+  font-size: 28px;
+  @include line-height(28, 32);
+  font-weight: 500;
+
+  @include media($bp580) {
+    font-size: 40px;
+    @include line-height(40, 44);
+  }
+
+  @include media($bp1280) {
+    font-size: 56px;
+    @include line-height(56, 66);
+  }
+}
+
+h2 {
+  font-size: 24px;
+  @include line-height(24, 28);
+
+  @include media($bp580) {
+    font-size: 38px;
+    @include line-height(38, 48);
+  }
+}
+
+h3 {
+  font-size: 18px;
+  @include line-height(18, 22);
+
+  @include media($bp580) {
+    font-size: 24px;
+    @include line-height(24, 32);
+  }
+}
+
+h4 {
+  font-size: 16px;
+  @include line-height(16, 30);
+}
+
+h5 {
+  font-size: 14px;
+  @include line-height(14, 25);
+
+  @include media($bp580) {
+    font-size: 20px;
+    @include line-height(18, 30);
+  }
+}
+
+p {
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .large-text &,
+  &.large {
+    @include large-text;
+  }
+}

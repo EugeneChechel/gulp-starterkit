@@ -1,0 +1,13 @@
+@mixin line-height($fontsize, $leading) {
+  line-height: ceil(($leading / $fontsize) * 10000) / 10000;
+}
+
+@mixin large-text() {
+  font-size: 20px;
+  @include line-height(20, 32);
+
+  @include media($bp580) {
+    font-size: 24px;
+    @include line-height(24, 36);
+  }
+}

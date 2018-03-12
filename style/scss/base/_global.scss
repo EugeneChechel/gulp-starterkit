@@ -1,0 +1,25 @@
+body {
+  font-size: 20px;
+  @include line-height(20, 34);
+}
+
+.layout-container {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $color-black;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  display: block;
+}

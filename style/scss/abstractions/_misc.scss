@@ -1,0 +1,93 @@
+@mixin chevron($size, $thickness, $color, $direction) {
+  content: '';
+  display: inline-block;
+  height: $size;
+  width: $size;
+  border-width: $thickness 0 0 $thickness;
+  border-color: $color;
+  border-style: solid;
+  @if $direction == 'right' {
+    transform: rotate(135deg);
+  } @else if $direction == 'down' {
+    transform: rotate(225deg);
+  } @else if $direction == 'left' {
+    transform: rotate(315deg);
+  } @else if $direction == 'up' {
+    transform: rotate(45deg);
+  }
+}
+
+@mixin xmark($height, $width, $thickness, $color) {
+  display: inline-block;
+  cursor: pointer;
+  width: $width;
+  height: $height;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    height: $thickness;
+    width: $width;
+    background: $color;
+  }
+
+  &:before {
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    transform: rotate(45deg);
+  }
+}
+
+@mixin no-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin webkit-margins {
+  -webkit-margin-before: 0;
+  -webkit-margin-end: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+}
+
+@mixin row-padding {
+  @include rem(padding-left, 15px);
+  @include rem(padding-right, 15px);
+
+  @include media($bp580) {
+    @include rem(padding-left, 30px);
+    @include rem(padding-right, 30px);
+  }
+
+  @include media($bp1280) {
+    @include rem(padding-left, 70px);
+    @include rem(padding-right, 70px);
+  }
+}
+
+
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin vertical-horisontal-center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}

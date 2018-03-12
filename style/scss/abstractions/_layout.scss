@@ -1,0 +1,66 @@
+@mixin max-width-container {
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+@mixin layout {
+  @include outer-container(1280px);
+  width: calc(100% - 32px);
+
+  @include media($bp580) {
+    width: calc(100% - 60px);
+  }
+
+  @include media($bp960) {
+    width: percentage(1140/1280);
+    min-width: 900px;
+  }
+}
+
+@mixin layout-960 {
+  @include media($bp960) {
+    @include outer-container(1280px);
+    width: percentage(1140/1280);
+    min-width: 900px;
+  }
+}
+
+@mixin layout-1280 {
+  @include media($bp1280) {
+    @include outer-container(1280px);
+    width: percentage(1140/1280);
+  }
+}
+
+@mixin remove-layout {
+  width: auto;
+  min-width: 0;
+  max-width: none;
+}
+
+@mixin override-small-layout {
+  margin: 0 -16px;
+
+  @include media($bp580) {
+    margin: 0 -30px;
+  }
+
+  @include media($bp960) {
+    margin: 0 auto;
+  }
+}
+
+@mixin small-layout-padding {
+  padding-right: 16px;
+  padding-left: 16px;
+
+  @include media($bp580) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @include media($bp960) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

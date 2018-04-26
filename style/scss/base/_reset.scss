@@ -1,6 +1,6 @@
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -30,6 +30,7 @@ p {
 ul,
 ol {
   margin-top: 0;
+
   ul,
   ol {
     margin-bottom: 0;
@@ -83,9 +84,9 @@ textarea {
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   cursor: pointer;
 }
 
@@ -102,22 +103,15 @@ td,
 th {
   padding: 0;
 }
-
-
-
-
-/* ==========================================================================
-   Print styles.
-   https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
-   ========================================================================== */
+// Print styles. https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
 @media print {
   *,
-  *:before,
-  *:after,
-  *:first-letter,
-  *:first-line {
+  *::before,
+  *::after,
+  *::first-letter,
+  *::first-line {
     background: transparent !important;
-    color: #000 !important;
+    color: $color-black !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -127,22 +121,26 @@ th {
     text-decoration: underline;
   }
 
-  a[href]:after {
-    content: " (" attr(href) ")";
+  a[href] {
+    &::after {
+      content: ' (' attr(href) ')';
+    }
   }
 
-  abbr[title]:after {
-    content: " (" attr(title) ")";
+  abbr[title] {
+    &::after {
+      content: ' (' attr(title) ')';
+    }
   }
 
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
+  a[href^='#']::after,
+  a[href^='javascript:']::after {
+    content: '';
   }
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid $color-main;
     page-break-inside: avoid;
   }
 
